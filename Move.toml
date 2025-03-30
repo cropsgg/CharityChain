@@ -1,0 +1,17 @@
+[package]
+name = "charity-dapp"
+version = "1.0.0"
+authors = []
+
+[addresses]
+net2dev_addr="0x2db6d9574e7c36edbb45a59ee4df763cdc815d6c30cc00cc6165f2af0a5efc08"
+charity="0x2db6d9574e7c36edbb45a59ee4df763cdc815d6c30cc00cc6165f2af0a5efc08"
+
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-framework.git"
+rev = "mainnet"
+subdir = "aptos-framework"
+
+[dev-dependencies]

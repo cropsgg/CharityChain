@@ -1,0 +1,316 @@
+/* Futuristic UI/UX Styles
+   This file contains all the custom CSS for the futuristic design elements
+   including animations, gradients, glassmorphism, and interactive effects
+   ========================================================================== */
+
+/* ========== Background Effects ========== */
+
+/* Animated gradient background */
+.bg-gradient-animated {
+  background: linear-gradient(125deg, #080c1f, #1a1e3f, #121638, #0c0e25);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+/* Aurora background effect */
+.bg-aurora {
+  background: radial-gradient(circle at 50% 50%, 
+    rgba(76, 0, 255, 0.15),
+    rgba(0, 183, 255, 0.15),
+    rgba(0, 217, 159, 0.15),
+    rgba(178, 0, 255, 0.15),
+    rgba(0, 132, 255, 0.15)
+  );
+  background-size: 200% 200%;
+  filter: blur(60px);
+  animation: aurora 20s linear infinite;
+}
+
+/* ========== Glassmorphism Effects ========== */
+
+/* Basic glassmorphism for light cards */
+.glassmorphism {
+  background: rgba(8, 10, 20, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Darker glassmorphism variant */
+.glassmorphism-dark {
+  background: rgba(4, 5, 10, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== Text Effects ========== */
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(to right, #00e5ff, #b400ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Gradient text with multiple colors */
+.text-gradient-tri {
+  background: linear-gradient(to right, #00e5ff, #b400ff, #00ffa3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Neon text effect */
+.neon-text {
+  color: #fff;
+  text-shadow: 
+    0 0 5px rgba(0, 229, 255, 0.8),
+    0 0 10px rgba(0, 229, 255, 0.5),
+    0 0 20px rgba(0, 229, 255, 0.3);
+}
+
+/* Green neon text variant */
+.neon-text-green {
+  color: #fff;
+  text-shadow: 
+    0 0 5px rgba(0, 255, 163, 0.8),
+    0 0 10px rgba(0, 255, 163, 0.5),
+    0 0 20px rgba(0, 255, 163, 0.3);
+}
+
+/* Purple neon text variant */
+.neon-text-purple {
+  color: #fff;
+  text-shadow: 
+    0 0 5px rgba(180, 0, 255, 0.8),
+    0 0 10px rgba(180, 0, 255, 0.5),
+    0 0 20px rgba(180, 0, 255, 0.3);
+}
+
+/* ========== Button Effects ========== */
+
+/* Button glow effect */
+.btn-glow {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-glow:after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+  z-index: -1;
+}
+
+/* Button hover expand effect */
+.btn-hover-expand {
+  transition: all 0.3s ease;
+}
+
+.btn-hover-expand:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+}
+
+/* ========== Card Effects ========== */
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Card glow effect on hover */
+.card-glow {
+  transition: all 0.3s ease;
+}
+
+.card-glow:hover {
+  box-shadow: 
+    0 0 10px rgba(0, 229, 255, 0.3),
+    0 0 20px rgba(0, 229, 255, 0.2);
+}
+
+/* ========== Cursor Effects ========== */
+
+/* Hide default cursor when using custom cursor */
+body {
+  cursor: none;
+}
+
+/* Small dot cursor */
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: width 0.3s, height 0.3s, background 0.3s;
+}
+
+/* Glow around cursor */
+.cursor-glow {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 229, 255, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  transition: width 0.5s, height 0.5s, background 0.5s;
+  opacity: 0.5;
+}
+
+/* Cursor active state (when hovering interactive elements) */
+.cursor-dot.cursor-active {
+  width: 12px;
+  height: 12px;
+  background: #00e5ff;
+}
+
+.cursor-glow.cursor-active {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 229, 255, 0.5);
+}
+
+/* ========== Border Effects ========== */
+
+/* Neon border */
+.neon-border {
+  position: relative;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  box-shadow: 0 0 5px rgba(0, 229, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.neon-border:hover {
+  border-color: rgba(0, 229, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+/* ========== Parallax Effect ========== */
+
+.parallax {
+  transform: translateZ(0);
+  transition: transform 0.2s ease-out;
+}
+
+/* ========== Animations ========== */
+
+/* Gradient animation */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Aurora animation */
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Shine effect for buttons */
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Pulse animation for glowing elements */
+@keyframes pulse {
+  0% { opacity: 0.6; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.6; transform: scale(0.9); }
+}
+
+/* Slow spinning animation */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Slide down animation for dropdowns */
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-pulse-glow {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* ========== Responsive Adaptations ========== */
+
+@media (max-width: 768px) {
+  .bg-gradient-animated {
+    background-size: 200% 200%;
+  }
+  
+  .cursor-dot, .cursor-glow {
+    display: none; /* Disable custom cursor on mobile */
+  }
+  
+  body {
+    cursor: auto; /* Restore default cursor on mobile */
+  }
+}
+
+/* ========== Color Constants (Accessible via CSS variables) ========== */
+
+:root {
+  /* Neon Colors */
+  --neon-blue: #00e5ff;
+  --neon-purple: #b400ff;
+  --neon-green: #00ffa3;
+  --neon-pink: #ff00e5;
+  
+  /* Holographic Colors */
+  --holographic-light: rgba(255, 255, 255, 0.8);
+  --holographic-dark: rgba(0, 0, 0, 0.8);
+  
+  /* Background Colors */
+  --bg-dark: #080c1f;
+  --bg-darker: #040510;
+}
+
+/* Neon color utilities */
+.text-neon-blue { color: var(--neon-blue); }
+.text-neon-purple { color: var(--neon-purple); }
+.text-neon-green { color: var(--neon-green); }
+.text-neon-pink { color: var(--neon-pink); } 

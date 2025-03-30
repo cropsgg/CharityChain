@@ -1,0 +1,16 @@
+{
+  "name": "charitychain-root",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "charity-frontend"
+  ],
+  "scripts": {
+    "predev": "echo 'Starting development server...'",
+    "dev": "cd charity-frontend && echo 'Running frontend dev server...' && npm run dev",
+    "postdev": "echo 'Development server started'",
+    "build": "cd charity-frontend && npm run build",
+    "start": "cd charity-frontend && npm run start",
+    "debug": "echo 'Current directory:' && pwd && echo '\nDirectory contents:' && ls -la && echo '\nFrontend directory contents:' && ls -la charity-frontend"
+  }
+} 
